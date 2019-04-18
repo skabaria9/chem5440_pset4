@@ -17,7 +17,7 @@ x0 = [10.0; %E0, uM
       0.0; %E2starBp, uM
       ]
  
- L = [0.01, 0.1, 1, 10]; %ligand concentrations, uM 
+ L = [0, 0.01, 0.1, 1, 10]; %ligand concentrations, uM 
 %----------------------
 %Run ODEs and Plot
 %---------------------
@@ -27,7 +27,7 @@ for i = 1:length(L)
     [t,x] = ode45(@ps4_balances, timespan, x0, [], Li);
     %Plot 
     figure(1)
-    subplot(2,2,i)
+    subplot(3,2,(i+1))
     plot(t,x(:,3));
     title(strcat('L is ',' ', num2str(Li)))
     xlabel('Time(sec)')
@@ -40,9 +40,9 @@ for i = 1:length(L)
     [t,x] = ode45(@ps4_balances_noBinb, timespan, x0, [], Li);
     %Plot 
     figure(2)
-    subplot(2,2,i)
+    subplot(3,2,(i+1))
     plot(t,x(:,3));
-    title(strcat('L is ',' ', num2str(Li),' no Binb'))
+    title(strcat('L is ',' ', num2str(Li)))
     xlabel('Time(sec)')
     ylabel('Response Estar (uM)')
 end

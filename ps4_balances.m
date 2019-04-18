@@ -53,14 +53,6 @@ B1=2.5*L/(1+L);
 %--------------------------------
 dxdt = zeros(7,1);
 
-%     dxdt(1) = kbp*E1starBp + kb*E1starB - VmaxR; %E0
-%     dxdt(2) = -a1plus*E1 + a1minus*E1star + VmaxR + B1*E1starB + B1*E1starBp; %E1
-%     dxdt(3) = a1plus*E1 - a1minus*E1star - abp*E1star*Bp + dbp*E1starBp - ab*E1star*B + db*E1starB; %E1star
-%     dxdt(4) = -kplus*A*B + kminus*Bp + (B1+db+kb)*E1starB - ab*E1star*B; %B
-%     dxdt(5) = kplus*A*B - kminus*Bp + (B1+dbp+kbp)*E1starBp - abp*E1star*Bp; %Bp
-%     dxdt(6) = ab*E1star*B - db*E1starB - B1*E1starB - kb*E1starB; %E1starB
-%     dxdt(7) = abp*E1star*Bp - dbp*E1starBp - B1*E1starBp - kbp*E1starBp; %E1starBp
-
 %Write the differential equations
 dxdt(1)=kbp*E1starBp + kb*E1starB - VmaxR;%E0
 dxdt(2)=-a1plus*E1 + a1minus*E1star + VmaxR + B1*E1starB + B1*E1starBp; %E1
